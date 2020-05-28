@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
+  title = 'Testons le titre'; 
+
   isExpanded = false;
 
   collapse() {
