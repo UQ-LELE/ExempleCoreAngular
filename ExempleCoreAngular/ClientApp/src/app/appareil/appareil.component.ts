@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { AppareilService } from "../services/appareil.service";
 
 
 @Component({
@@ -7,8 +8,13 @@ import { Component, Input } from "@angular/core";
 })
 export class AppareilComponent {
 
+  constructor(private appareilService: AppareilService) {
+
+  }
+
   @Input() appareilName: string;
   @Input() appareilStatus: string;
+  @Input() indexOfAppareil: number;
 
   getStatus() {
     return this.appareilStatus;
@@ -20,5 +26,13 @@ export class AppareilComponent {
     } else if (this.appareilStatus === 'éteint') {
       return 'red';
     }
+  }
+
+  onSwitchOn() {
+    this.appareilService.switchOnOne(this.indexOfAppareil);
+  }
+
+  onSwitchOff() {
+    this.appareilService.switchOffOne(this.indexOfAppareil);
   }
 }

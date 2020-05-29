@@ -11,6 +11,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import { AppareilListComponent } from './appareil-list/appareil-list.component';
+import { AppareilService } from './services/appareil.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AppareilListComponent } from './appareil-list/appareil-list.component';
       { path: 'privacy', component: PrivacyComponent },
     ])
   ],
-  providers: [],
+  providers: [AppareilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

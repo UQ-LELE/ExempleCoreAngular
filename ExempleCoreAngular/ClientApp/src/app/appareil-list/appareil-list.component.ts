@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppareilService } from '../services/appareil.service';
 
 @Component({
   selector: 'app-appareil-list',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppareilListComponent implements OnInit {
 
-  constructor() {
+  appareils: any[];
+
+  constructor(private appareilService: AppareilService) {
     setTimeout(
       () => {
         this.isAuth = true;
@@ -16,6 +19,7 @@ export class AppareilListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appareils = this.appareilService.appareils;
   }
 
   isAuth = false;
@@ -31,22 +35,12 @@ export class AppareilListComponent implements OnInit {
       );
     })
 
-  appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'éteint'
-    },
-    {
-      name: 'Télévision',
-      status: 'allumé'
-    },
-    {
-      name: 'Ordinateur',
-      status: 'éteint'
-    }
-  ];
 
   onAllumer() {
-    console.log('On allume tout !');
+    this.appareilService.switchOnAll();
+  }
+
+  onEteindre() {
+    this.appareilService.switchOffAll();
   }
 }
