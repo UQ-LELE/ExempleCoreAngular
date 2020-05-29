@@ -8,20 +8,28 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { BlogComponent } from './blog/blog.component';
+import { PostComponent } from './post/post.component';
+import { AppareilListComponent } from './appareil-list/appareil-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     AppareilComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    PostComponent,
+    BlogComponent,
+    AppareilListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'appareil', component: AppareilComponent },
+      { path: 'appareil-list', component: AppareilListComponent },
+      { path: 'blog', component: BlogComponent },
+      { path: 'privacy', component: PrivacyComponent },
     ])
   ],
   providers: [],

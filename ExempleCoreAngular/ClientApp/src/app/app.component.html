@@ -1,21 +1,6 @@
 <body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
-    <div class="row">
-      <div class="col-sx-12">
-        <h2>Mes appareils</h2>
-
-        <p>Mis à jour : {{lastUpdate | async | date | uppercase}}</p>
-
-        <ul class="list-group">
-          <app-appareil *ngFor="let appareil of appareils"
-                        [appareilName]="appareil.name"
-                        [appareilStatus]="appareil.status"></app-appareil>
-        </ul>
-        <button class="btn btn-success"
-                [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
-      </div>
-    </div>
-
+    <router-outlet></router-outlet>
   </div>
 </body>

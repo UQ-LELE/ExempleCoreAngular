@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+    'list-group-item-success': postLoveIts > 0,
+    'list-group-item-danger': postLoveIts < 0
+    }">
+  <div class="row justify-content-between">
+    <div class="col-4">
+      <h4>{{postTitle}}</h4>
+    </div>
+    <div class="col-auto">
+      <p>{{postDate | date | uppercase}}</p>
+    </div>
+  </div>
+  <p>{{postContent}}</p>
+  <p>{{postLoveIts}}</p>
+  <div class="row">
+    <button (click)="onLike()" class="btn btn-success">Like it</button>
+    <button (click)="onDislike()" class="btn btn-danger">Don't like it</button>
+  </div>
+</li>
