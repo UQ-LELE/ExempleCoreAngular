@@ -1,6 +1,18 @@
 <body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
-    <router-outlet></router-outlet>
+    <div class="row">
+      <div class="col-sx-12">
+        <h2>Mes appareils</h2>
+        <ul class="list-group">
+          <app-appareil [appareilName]="appareilOne" [appareilStatus] ="'éteint'"></app-appareil>
+          <app-appareil [appareilName]="appareilTwo" [appareilStatus] ="'allumé'"></app-appareil>
+          <app-appareil [appareilName]="appareilThree" [appareilStatus] ="'éteint'"></app-appareil>
+        </ul>
+        <button class="btn btn-success"
+                [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
+      </div>
+    </div>
+
   </div>
 </body>
