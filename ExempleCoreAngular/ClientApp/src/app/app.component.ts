@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { resolve } from 'dns';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
+
+  lastUpdate = new Promise(
+    (resolve, reject) => {
+      const date = new Date();
+      setTimeout(
+        () => {
+          resolve(date);
+        },
+        2000
+      );
+    })
 
   appareils = [
     {
