@@ -15,6 +15,7 @@ export class AppareilComponent {
   @Input() appareilName: string;
   @Input() appareilStatus: string;
   @Input() indexOfAppareil: number;
+  @Input() id: number;
 
   getStatus() {
     return this.appareilStatus;

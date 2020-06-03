@@ -26,11 +26,15 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\appareil\appareil.component.ts" />
     <None Remove="ClientApp\src\app\services\appareil.service.ts" />
+    <None Remove="ClientApp\src\app\services\auth-guard.service.ts" />
+    <None Remove="ClientApp\src\app\services\auth.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\appareil\appareil.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\appareil.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\auth-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\auth.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
